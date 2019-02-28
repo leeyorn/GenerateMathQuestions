@@ -1,9 +1,11 @@
-package com.liyao;
+package com.liyao.math;
 
+import org.apache.commons.collections4.map.LRUMap;
 import org.apache.poi.xwpf.usermodel.*;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Map;
 import java.util.Random;
 
 public class MathQuestionMain {
@@ -44,7 +46,7 @@ public class MathQuestionMain {
                 subtrahend = generate1OperatorQuestion.getSubtrahend();
                 minuend = generate1OperatorQuestion.getMinuend();
                 operator01 = generate1OperatorQuestion.getOperator01();
-
+                Map<String, String> a = new LRUMap<>();
                 result = String.valueOf(subtrahend) + " " + operator01 + " " + String.valueOf(minuend) + " = ";
 
                 XWPFRun run = paragraph.createRun();
